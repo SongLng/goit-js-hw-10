@@ -25,15 +25,13 @@ function onSearch(event) {
       if (countries.length >= 10) {
         searchingInfo();
         refs.countryInfo.innerHTML = '';
+        refs.countryList.innerHTML = '';
       } else if (countries.length === 1) {
         renderInfo(countries);
         refs.countryList.innerHTML = '';
       } else if (countries.length <= 10) {
         renderList(countries);
         refs.countryInfo.innerHTML = '';
-        setTimeout(() => {
-          refs.countryList.innerHTML = '';
-        }, 3000);
       } else if (countries.length === undefined) {
         onFetchError();
       }
